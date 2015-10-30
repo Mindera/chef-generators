@@ -1,0 +1,11 @@
+AllCops:
+  Exclude:
+    - 'tmp/**/*'
+    - '.kitchen/**/*'
+
+Style/FileName:
+  Exclude:
+    - 'Policyfile.rb'
+
+Metrics/LineLength:
+  Max: 120
