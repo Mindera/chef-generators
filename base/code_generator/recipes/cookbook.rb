@@ -37,6 +37,9 @@ cookbook_file "#{cookbook_dir}/Gemfile" do
   action :create_if_missing
 end
 
+# Gemfile
+cookbook_file "#{cookbook_dir}/Rakefile"
+
 # TK & Serverspec
 template "#{cookbook_dir}/.kitchen.yml" do
   source 'kitchen_policyfile.yml.erb'
