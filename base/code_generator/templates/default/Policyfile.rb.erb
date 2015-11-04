@@ -9,6 +9,9 @@ name '<%= policy_name %>'
 # Where to find external cookbooks:
 default_source :supermarket
 
+# named_run_list: chef-client will run this custom run list if instructed to
+named_run_list :default_all, '<%= policy_run_list %>'
+
 # run_list: chef-client will run these recipes in the order specified.
 run_list '<%= policy_run_list %>'
 
