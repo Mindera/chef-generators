@@ -14,6 +14,7 @@ end
 template "#{cookbook_dir}/LICENSE" do
   source 'LICENSE.mit.erb'
   helpers(ChefDK::Generator::TemplateHelper)
+  action :create_if_missing
 end
 
 # README
@@ -23,12 +24,15 @@ template "#{cookbook_dir}/README.md" do
 end
 
 # chefignore
-cookbook_file "#{cookbook_dir}/chefignore"
+cookbook_file "#{cookbook_dir}/chefignore" do
+  action :create_if_missing
+end
 
 # Policyfile
 template "#{cookbook_dir}/Policyfile.rb" do
   source 'Policyfile.rb.erb'
   helpers(ChefDK::Generator::TemplateHelper)
+  action :create_if_missing
 end
 
 # Gemfile
@@ -38,7 +42,9 @@ cookbook_file "#{cookbook_dir}/Gemfile" do
 end
 
 # Gemfile
-cookbook_file "#{cookbook_dir}/Rakefile"
+cookbook_file "#{cookbook_dir}/Rakefile" do
+  action :create_if_missing
+end
 
 # TK & Serverspec
 template "#{cookbook_dir}/.kitchen.yml" do
@@ -102,6 +108,7 @@ directory "#{cookbook_dir}/attributes"
 template "#{cookbook_dir}/attributes/default.rb" do
   source 'attribute.rb.erb'
   helpers(ChefDK::Generator::TemplateHelper)
+  action :create_if_missing
 end
 
 # git
