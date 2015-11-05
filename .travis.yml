@@ -1,0 +1,20 @@
+sudo: false
+language: ruby
+addons:
+  apt:
+    sources:
+      - chef-current-precise
+    packages:
+      - chefdk
+rvm:
+  - 2.1.6
+env:
+  - TEST_DIR=base
+before_script:
+  - eval "$(/opt/chefdk/bin/chef shell-init bash)"
+script:
+  - /opt/chefdk/embedded/bin/chef --version
+  - /opt/chefdk/embedded/bin/rubocop --version
+  - /opt/chefdk/embedded/bin/foodcritic --version
+  - chef exec bundle install
+  - cd $TEST_DIR && chef exec bundle exec rake test
