@@ -1,4 +1,4 @@
-# chef-generators
+# Chef Generators
 
 Set of Chef generators to generate Mindera specific Chef things, like cookbooks, templates, attributes, etc, when run "chef generate X"
 
