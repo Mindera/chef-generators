@@ -2,6 +2,7 @@ AllCops:
   Exclude:
     - 'tmp/**/*'
     - '.kitchen/**/*'
+    - 'lib/foodcritic/rules/etsy.rb'
 
 Style/FileName:
   Exclude:
@@ -9,3 +10,13 @@ Style/FileName:
 
 Metrics/LineLength:
   Max: 120
+
+Metrics/MethodLength:
+  CountComments: false
+  Max: 20
+
+Metrics/AbcSize:
+  Max: 30
+
+Metrics/PerceivedComplexity:
+  Max: 15
