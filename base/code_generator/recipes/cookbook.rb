@@ -46,6 +46,11 @@ cookbook_file "#{cookbook_dir}/Rakefile" do
   action :create_if_missing
 end
 
+# Cookbook SDK configuration file
+cookbook_file "#{cookbook_dir}/cookbook_sdk.json" do
+  action :create_if_missing
+end
+
 # TK & Serverspec
 template "#{cookbook_dir}/.kitchen.yml" do
   source 'kitchen_policyfile.yml.erb'
