@@ -5,9 +5,9 @@
       "slack": {
         "token": "TO_BE_COMPLETED",
         "channel": "#chef",
-        "send_at_start": false,
-        "send_at_success": false,
-        "send_at_failure": false
+        "on_start": false,
+        "on_success": false,
+        "on_failure": false
       }
     }
   }
